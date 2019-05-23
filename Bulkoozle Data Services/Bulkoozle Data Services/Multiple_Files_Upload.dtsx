@@ -1,0 +1,2961 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2019 8:37:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SHPFY"
+  DTS:CreatorName="SHPFY\Administrator"
+  DTS:DTSID="{0164F544-0B36-4DA3-B8A6-B847044EA081}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Multiple_Files_Upload"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{200B952B-0C91-4000-8AC3-2AD6775D1CFF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Order_Hive_Connection_Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E94CC839-297B-44A6-8E04-9764F4391823}"
+      DTS:ObjectName="Order_Hive_Connection_Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Program Files\Configuration\Data_Sources\FTP\product_export_2019-05-18T19_44_37.389.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{43424E97-9F8C-4E9D-9F4E-7A0D4B75DEC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{12BC45B9-3B43-4B1C-B79B-25898C1AC30E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SKU"
+              DTS:DTSID="{D768A9B8-3BD2-4B2E-9A13-40859C06B5C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Brand"
+              DTS:DTSID="{A2A298B8-AF8F-497F-A1C6-80E988393BDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Barcode"
+              DTS:DTSID="{1DF81323-EF00-448B-B3AD-5A3AE92E9609}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{16C2B438-C56F-45A3-8366-340DEDC4834A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{8A3FF422-679A-4D23-B4F2-737B24E546DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HSN"
+              DTS:DTSID="{02890940-E380-4A6D-B9F7-927E7FDE3522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight"
+              DTS:DTSID="{BC57158B-BBA7-43A0-8C46-493CAE0E357C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight Unit"
+              DTS:DTSID="{BECA4720-233E-4796-ABBE-A6A126C3C836}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Threshold"
+              DTS:DTSID="{17663D24-3DF8-4B87-94B6-2C0AA9C966CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{F92E37E2-086E-4644-AC98-29B3A66783AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Orderhive)"
+              DTS:DTSID="{ABA1DB49-A102-4AEB-89C0-DC4ACDF17CDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Bulkoozle)"
+              DTS:DTSID="{7B86F44E-D935-4F5F-8692-0D17F40AC629}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Bulkoozle Amazon Merchant &amp; FBA)"
+              DTS:DTSID="{3C1033B9-46C9-4B57-A50E-0FF56731214D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Bulkoozle Amazon Merchant &amp; FBA FBA)"
+              DTS:DTSID="{344B8829-D93F-454A-979A-7CBA49635B14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Buy)"
+              DTS:DTSID="{30A65555-6E48-4F11-9B3F-F3490D63EDD9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price (Wholesale)"
+              DTS:DTSID="{6CB65089-17AE-4EC0-85AC-2BC1D167149E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+              DTS:DTSID="{AE63958C-3738-4E75-A54D-2BBE3BEB6D85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+              DTS:DTSID="{59F1367A-0B7E-4548-ADA4-E95F345CF95F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+              DTS:DTSID="{24028DB3-53E7-485A-943C-B42F5E9C4274}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Onhand Quantity (Bulkoozle Village)"
+              DTS:DTSID="{32895636-EA93-400B-A83D-9E1FC3BCB96F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Outgoing Quantity (Bulkoozle Village)"
+              DTS:DTSID="{21330CFE-FD80-4461-8B91-953549D90867}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Incoming Quantity (Bulkoozle Village)"
+              DTS:DTSID="{4A73B63A-CA29-428F-B40B-16769F9A5B4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Onhand Quantity (Bulkoozle Warehouse New)"
+              DTS:DTSID="{EAF45AF3-3A55-43EC-8176-252BE3592E38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Outgoing Quantity (Bulkoozle Warehouse New)"
+              DTS:DTSID="{AD3A16A5-E061-433D-BC51-1AF4F6D26912}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Incoming Quantity (Bulkoozle Warehouse New)"
+              DTS:DTSID="{F8541691-7A30-4F11-B87F-D2B458849F12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Onhand Quantity (Store B )"
+              DTS:DTSID="{3E8E1C3D-8FDB-4C1D-A255-73839B2DD83F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Outgoing Quantity (Store B )"
+              DTS:DTSID="{4430096C-BFBD-4FA4-A5D7-3320F2877F4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Incoming Quantity (Store B )"
+              DTS:DTSID="{73A0B519-2C0B-47A9-82E3-AE32A7E73099}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Quantity"
+              DTS:DTSID="{88ECCA05-675D-4087-B7C3-DDF051C4FC44}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+      DTS:ObjectName="SHPFY.Inventory_Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Folder_Path]+"\\"+ @[User::File_Name]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SHPFY;Initial Catalog=Inventory_Manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Supple_Connection_server]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{18D3D597-325B-4FA3-935A-2DF5C56E57DD}"
+      DTS:ObjectName="Supple_Connection_server">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Folder_Path]+"\\"+ @[User::File_Name]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Program Files\Configuration\Data_Sources\FTP\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Type"
+              DTS:DTSID="{671B9C83-6E97-4AE2-B9AA-8E9420D1DC63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Title"
+              DTS:DTSID="{45F2274C-732F-438A-9775-35843390A83E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Title"
+              DTS:DTSID="{E1B1FA34-556D-40B5-B106-C0A2F818662F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SKU"
+              DTS:DTSID="{8A6954D0-F401-48C8-8912-D5F9095944D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{A24E8920-E6F0-444D-904E-307FEF7A75DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Compare at Price"
+              DTS:DTSID="{8624767C-1D72-4A37-93BD-F45B6AAEE078}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="wholesale Price"
+              DTS:DTSID="{CF582B62-54A1-4C70-9C6C-38D8F3D3B209}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70A9290A-76FF-4985-A3C8-62641620F7A3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="File_Name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F8D5D452-9FC7-4667-A41F-A7314595AA6C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Folder_Path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\FTP</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{0E1CCDED-E0C4-4AFE-825F-6B617FC93448}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{63B935F0-038E-45F0-8ED4-7C46E398F6DA}"
+        DTS:ObjectName="{63B935F0-038E-45F0-8ED4-7C46E398F6DA}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::Folder_Path]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Program Files\Configuration\Data_Sources\FTP" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Archive Order Hive"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{CAAC9883-69E3-448E-AC7E-23EB4789D4E3}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Order Hive"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Archive Supple Table"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{6EECE7FE-C443-4CC2-8B89-0D563BC96EC1}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Supple Table"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Script Task"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{94C64A2D-A22C-4DE6-9CC2-8055FD80CC4E}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Script Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_2133214a00d441e5adf596386b279f9d"
+              VSTAMajorVersion="15"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Truncate Order Hive Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B7AEA447-CD1C-4A68-88E5-070EBE891B29}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Order Hive Table"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+              SQLTask:SqlStatementSource="Delete  [dbo].[Product_Inventory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Truncate Suple Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4D0D9359-AE17-41FB-90B1-1CEE81083F66}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Suple Table"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+              SQLTask:SqlStatementSource="Delete [dbo].[Supple_Products]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Upload order hive file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3CD9D8D8-5212-4DAA-A381-DC972CD1ED96}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Upload order hive file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Upload order hive file\Order hive file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Order hive file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Order_Hive_Connection_Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Order_Hive_Connection_Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[SKU]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[SKU]"
+                          name="SKU"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Brand]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Brand]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Brand]"
+                          name="Brand"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Barcode]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Barcode]"
+                          name="Barcode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Category]"
+                          name="Category"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Type]"
+                          name="Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[HSN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[HSN]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[HSN]"
+                          name="HSN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Weight]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight]"
+                          name="Weight"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Weight Unit]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight Unit]"
+                          name="Weight Unit"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Threshold]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Threshold]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Threshold]"
+                          name="Threshold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Tags]"
+                          name="Tags"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Orderhive)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Orderhive)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Orderhive)]"
+                          name="Price (Orderhive)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle)]"
+                          name="Price (Bulkoozle)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA FBA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Buy)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Buy)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Buy)]"
+                          name="Price (Buy)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Wholesale)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Wholesale)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Wholesale)]"
+                          name="Price (Wholesale)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          name="Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          name="Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          name="Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Village)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Village)]"
+                          name="Onhand Quantity (Bulkoozle Village)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Village)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Village)]"
+                          name="Outgoing Quantity (Bulkoozle Village)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Village)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Village)]"
+                          name="Incoming Quantity (Bulkoozle Village)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          name="Onhand Quantity (Bulkoozle Warehouse New)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          name="Outgoing Quantity (Bulkoozle Warehouse New)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          name="Incoming Quantity (Bulkoozle Warehouse New)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Store B )]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Store B )]"
+                          name="Onhand Quantity (Store B )"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Store B )]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Store B )]"
+                          name="Outgoing Quantity (Store B )"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Store B )]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Store B )]"
+                          name="Incoming Quantity (Store B )"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Total Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Total Quantity]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Total Quantity]"
+                          name="Total Quantity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Brand]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Brand" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Barcode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[HSN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="HSN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Weight]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Weight" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Weight Unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Threshold]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Threshold" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Tags" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Orderhive)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Orderhive)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Buy)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Buy)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Price (Wholesale)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Wholesale)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Onhand Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Outgoing Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Incoming Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].ExternalColumns[Total Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Total Quantity" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Upload order hive file\Order hive table"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Order hive table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Product_Inventory]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[SKU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="SKU"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[SKU]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Brand]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Brand"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Brand]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Brand]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Barcode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Barcode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Barcode]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Barcode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Category]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Category"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Category]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[HSN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="HSN"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[HSN]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[HSN]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Weight]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Weight"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Weight Unit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Weight Unit"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Weight Unit]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Weight Unit]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Threshold]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Threshold"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Threshold]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Threshold]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Tags]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Tags"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Tags]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Orderhive)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Orderhive)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Orderhive)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Orderhive)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Bulkoozle)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Bulkoozle)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Bulkoozle Amazon Merchant &amp; FBA)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Bulkoozle Amazon Merchant &amp; FBA FBA)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Buy)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Buy)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Buy)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Buy)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Price (Wholesale)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price (Wholesale)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Wholesale)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Price (Wholesale)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Onhand Quantity (Bulkoozle Village)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Onhand Quantity (Bulkoozle Village)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Village)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Village)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Outgoing Quantity (Bulkoozle Village)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Outgoing Quantity (Bulkoozle Village)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Village)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Village)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Incoming Quantity (Bulkoozle Village)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Incoming Quantity (Bulkoozle Village)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Village)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Village)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Onhand Quantity (Bulkoozle Warehouse New)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Bulkoozle Warehouse New)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Outgoing Quantity (Bulkoozle Warehouse New)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Bulkoozle Warehouse New)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Incoming Quantity (Bulkoozle Warehouse New)"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Bulkoozle Warehouse New)]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Onhand Quantity (Store B )]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Onhand Quantity (Store B )"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Store B )]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Onhand Quantity (Store B )]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Outgoing Quantity (Store B )]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Outgoing Quantity (Store B )"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Store B )]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Outgoing Quantity (Store B )]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Incoming Quantity (Store B )]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Incoming Quantity (Store B )"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Store B )]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Incoming Quantity (Store B )]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].Columns[Total Quantity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Total Quantity"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Total Quantity]"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output].Columns[Total Quantity]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Brand]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Brand" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Barcode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[HSN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="HSN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Weight" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Weight Unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Threshold]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Threshold" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Tags" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Orderhive)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Orderhive)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Bulkoozle Amazon Merchant &amp; FBA FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Bulkoozle Amazon Merchant &amp; FBA FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Buy)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Buy)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Price (Wholesale)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price (Wholesale)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Amazon Merchant &amp; FBA COM FBA)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Village)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Village)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Bulkoozle Warehouse New)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Bulkoozle Warehouse New)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Onhand Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Onhand Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Outgoing Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Outgoing Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Incoming Quantity (Store B )]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Incoming Quantity (Store B )" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input].ExternalColumns[Total Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Total Quantity" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Upload order hive file.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Upload order hive file\Order hive table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Upload order hive file\Order hive file.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Upload Suple file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E35900B1-856B-4A80-8125-D148FBC2915F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Upload Suple file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Upload Suple file\Supple file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Supple file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Supple_Connection_server]"
+                      connectionManagerRefId="Package.ConnectionManagers[Supple_Connection_server]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Product Type]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Type]"
+                          name="Product Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Title]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Product Title]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Title]"
+                          name="Product Title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Variant Title]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Variant Title]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Variant Title]"
+                          name="Variant Title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[SKU]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[SKU]"
+                          name="SKU"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Price]"
+                          name="Price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Compare at Price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Compare at Price]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Compare at Price]"
+                          name="Compare at Price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[wholesale Price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[wholesale Price]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[wholesale Price]"
+                          name="wholesale Price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Product Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Product Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Product Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Product Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Variant Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[Compare at Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Compare at Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].ExternalColumns[wholesale Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="wholesale Price" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Upload Suple file\Supple table"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Supple table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Supple_Products]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[Product Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Product Type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Product Type]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[Product Title]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Product Title"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Product Title]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Product Title]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[Variant Title]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Variant Title"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Title]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Variant Title]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[SKU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="SKU"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[SKU]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[Price]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Price"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Price]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[Compare at Price]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Compare at Price"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Compare at Price]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[Compare at Price]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].Columns[wholesale Price]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="wholesale Price"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[wholesale Price]"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output].Columns[wholesale Price]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Product Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Product Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Product Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Product Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[Compare at Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Compare at Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input].ExternalColumns[wholesale Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="wholesale Price" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Suple file\Supple table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Suple file\Supple table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Upload Suple file.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Upload Suple file\Supple table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Upload Suple file\Supple file.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{24AB1B7D-98BC-49F6-983D-DB1789E969FA}"
+          DTS:EvalOp="3"
+          DTS:Expression="reverse (substring(Reverse(@[User::File_Name] ),29,len( @[User::File_Name] ))) == &quot;product_export&quot;"
+          DTS:From="Package\Foreach Loop Container\Script Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Truncate Order Hive Table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{FB84070B-634B-4F58-8CFD-1B7FCE65B751}"
+          DTS:EvalOp="3"
+          DTS:Expression="reverse (substring(Reverse(@[User::File_Name] ),16,len( @[User::File_Name] ))) == &quot;wholesale-prices-avicenna-solutions&quot;"
+          DTS:From="Package\Foreach Loop Container\Script Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\Truncate Suple Table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{846525D4-677E-4699-8970-D8D9DF04B6BF}"
+          DTS:From="Package\Foreach Loop Container\Truncate Order Hive Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach Loop Container\Upload order hive file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{C89B1119-A2EE-4277-B55C-249C8078D024}"
+          DTS:From="Package\Foreach Loop Container\Truncate Suple Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Foreach Loop Container\Upload Suple file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{5BBE0F46-E3F8-44EC-A6A0-A6E0F684F556}"
+          DTS:From="Package\Foreach Loop Container\Upload order hive file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Foreach Loop Container\Archive Order Hive" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{B18242ED-ABCB-4D02-94B1-93049DAAA968}"
+          DTS:From="Package\Foreach Loop Container\Upload Suple file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Foreach Loop Container\Archive Supple Table" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D8AEA74F-1550-4134-A348-8F2CBC4C6C5C}"
+          DTS:ObjectName="{D8AEA74F-1550-4134-A348-8F2CBC4C6C5C}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::File_Name" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Upload order hive file"
+          TopLeft="28,201" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Foreach Loop Container\Upload Suple file"
+          TopLeft="266,206" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Foreach Loop Container\Truncate Order Hive Table"
+          TopLeft="4,92" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Foreach Loop Container\Truncate Suple Table"
+          TopLeft="270,95" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Foreach Loop Container\Archive Order Hive"
+          TopLeft="32,297" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Foreach Loop Container\Archive Supple Table"
+          TopLeft="274,310" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Foreach Loop Container\Script Task"
+          TopLeft="176,15" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="221,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115,35"
+              Start="0,0"
+              End="-115,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.2533936651584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.2533936651584"
+                    Point2="0,14.2533936651584"
+                    Point3="-4,14.2533936651584" />
+                  <mssgle:LineSegment
+                    End="-111,14.2533936651584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111,14.2533936651584"
+                    Point2="-115,14.2533936651584"
+                    Point3="-115,18.2533936651584" />
+                  <mssgle:LineSegment
+                    End="-115,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-65.5,19.2533936651584,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="262,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97.5,38"
+              Start="0,0"
+              End="97.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4751131221719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4751131221719"
+                    Point2="0,15.4751131221719"
+                    Point3="4,15.4751131221719" />
+                  <mssgle:LineSegment
+                    End="93.5,15.4751131221719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93.5,15.4751131221719"
+                    Point2="97.5,15.4751131221719"
+                    Point3="97.5,19.4751131221719" />
+                  <mssgle:LineSegment
+                    End="97.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="40.75,20.4751131221719,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="106,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,67"
+              Start="0,0"
+              End="12,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="8,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,33.5"
+                    Point2="12,33.5"
+                    Point3="12,37.5" />
+                  <mssgle:LineSegment
+                    End="12,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="359.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,69"
+              Start="0,0"
+              End="-14.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,34.5"
+                    Point2="-14.5,34.5"
+                    Point3="-14.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="116.75,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="345,248">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18,62"
+              Start="0,0"
+              End="18,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="4,31" />
+                  <mssgle:LineSegment
+                    End="14,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14,31"
+                    Point2="18,31"
+                    Point3="18,35" />
+                  <mssgle:LineSegment
+                    End="18,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="520,411"
+          Size="520,454"
+          Id="Package\Foreach Loop Container"
+          TopLeft="361,127" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Upload order hive file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Foreach Loop Container\Upload order hive file\Order hive file"
+          TopLeft="361,166" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Upload order hive file\Order hive table"
+          TopLeft="342,324" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Upload order hive file.Paths[Flat File Source Output]"
+          TopLeft="434,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,116"
+              Start="0,0"
+              End="-14.5,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54"
+                    Point2="0,58"
+                    Point3="-4,58" />
+                  <mssgle:LineSegment
+                    End="-10.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,58"
+                    Point2="-14.5,58"
+                    Point3="-14.5,62" />
+                  <mssgle:LineSegment
+                    End="-14.5,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Upload Suple file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Foreach Loop Container\Upload Suple file\Supple file"
+          TopLeft="351,99" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Foreach Loop Container\Upload Suple file\Supple table"
+          TopLeft="332,257" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Upload Suple file.Paths[Flat File Source Output]"
+          TopLeft="415,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,116"
+              Start="0,0"
+              End="-14.5,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54"
+                    Point2="0,58"
+                    Point3="-4,58" />
+                  <mssgle:LineSegment
+                    End="-10.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,58"
+                    Point2="-14.5,58"
+                    Point3="-14.5,62" />
+                  <mssgle:LineSegment
+                    End="-14.5,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Upload order hive file\Order hive table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Upload Suple file\Supple table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
