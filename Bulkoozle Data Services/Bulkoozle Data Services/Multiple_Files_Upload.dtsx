@@ -11,16 +11,28 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Multiple_Files_Upload"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{200B952B-0C91-4000-8AC3-2AD6775D1CFF}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{50176CAB-26C4-4B37-A566-5A4CF9EA2B39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[IP]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{24F0131B-4463-4226-A81C-CC9D982E797A}"
+      DTS:ObjectName="IP">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=146.71.77.152;UseWindowsAuthentication=False;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Order_Hive_Connection_Manager]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{E94CC839-297B-44A6-8E04-9764F4391823}"
       DTS:ObjectName="Order_Hive_Connection_Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Folder_Path]+"\\"+ @[User::File_Name]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +42,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Program Files\Configuration\Data_Sources\FTP\product_export_2019-05-18T19_44_37.389.csv">
+          DTS:ConnectionString="C:\Program Files\Configuration\Data_Sources\FTP\">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -316,15 +328,33 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SHPFY mail server]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
+      DTS:ObjectName="SHPFY mail server">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=SHPFY;UseWindowsAuthentication=True;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+      DTS:DTSID="{F252815C-C482-49AE-B366-60E76458B5CF}"
       DTS:ObjectName="SHPFY.Inventory_Manager">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[User::Folder_Path]+"\\"+ @[User::File_Name]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=SHPFY;Initial Catalog=Inventory_Manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{80CB23EA-E269-44EE-81C3-5FA999B9E963}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=SHPFY;UseWindowsAuthentication=True;EnableSsl=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -426,6 +456,17 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{D1A54DFF-B458-4F8C-B46C-B4708589AB9A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::Folder_Path]+&quot;\\&quot;+ @[User::File_Name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Folder_Full_Path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\FTP\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{F8D5D452-9FC7-4667-A41F-A7314595AA6C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -462,7 +503,17 @@
           </ForEachFileEnumeratorProperties>
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
-      <DTS:Variables />
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{A7A61608-52D1-4A80-9CE8-E517E6F987DE}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Archive_File_Path">
+          <DTS:VariableValue
+            DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\Archive</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Archive Order Hive"
@@ -474,7 +525,15 @@
           DTS:ObjectName="Archive Order Hive"
           DTS:ThreadHint="0">
           <DTS:Variables />
-          <DTS:ObjectData />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::Folder_Full_Path"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Archive_File_Path"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Archive Supple Table"
@@ -486,7 +545,15 @@
           DTS:ObjectName="Archive Supple Table"
           DTS:ThreadHint="1">
           <DTS:Variables />
-          <DTS:ObjectData />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::Folder_Full_Path"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Archive_File_Path"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Script Task"
@@ -507,6 +574,24 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Send Mail Task"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{24F750B0-0F81-4D3D-A819-AE893E2ABD99}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send Mail Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
+              SendMailTask:From="alerts@bulkoozle.com"
+              SendMailTask:To="haas@bulkoozle.com"
+              SendMailTask:Subject="FIles loaded successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Truncate Order Hive Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -518,7 +603,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+              SQLTask:Connection="{F252815C-C482-49AE-B366-60E76458B5CF}"
               SQLTask:SqlStatementSource="Delete  [dbo].[Product_Inventory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -534,7 +619,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7402B078-5F25-4CC7-9EE8-20A6E3BDCF3B}"
+              SQLTask:Connection="{F252815C-C482-49AE-B366-60E76458B5CF}"
               SQLTask:SqlStatementSource="Delete [dbo].[Supple_Products]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2574,6 +2659,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
           DTS:To="Package\Foreach Loop Container\Archive Supple Table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{E5FF611D-11A9-44D8-AF77-412E06E143A4}"
+          DTS:From="Package\Foreach Loop Container\Archive Order Hive"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Foreach Loop Container\Send Mail Task" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -2821,11 +2914,49 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Foreach Loop Container\Send Mail Task"
+          TopLeft="183,394" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+          TopLeft="115.5,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.833333333333,55"
+              Start="0,0"
+              End="118.833333333333,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6517150395778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6517150395778"
+                    Point2="0,32.6517150395778"
+                    Point3="4,32.6517150395778" />
+                  <mssgle:LineSegment
+                    End="114.833333333333,32.6517150395778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.833333333333,32.6517150395778"
+                    Point2="118.833333333333,32.6517150395778"
+                    Point3="118.833333333333,36.6517150395778" />
+                  <mssgle:LineSegment
+                    End="118.833333333333,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="520,411"
-          Size="520,454"
+          PanelSize="520,491"
+          Size="520,534"
           Id="Package\Foreach Loop Container"
           TopLeft="361,127" />
       </GraphLayout>
