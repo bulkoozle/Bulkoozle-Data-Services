@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Multiple_Files_Upload"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{50176CAB-26C4-4B37-A566-5A4CF9EA2B39}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{8C324AE3-A8C3-45A5-92FF-22EBE1861E50}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -340,21 +340,11 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F252815C-C482-49AE-B366-60E76458B5CF}"
+      DTS:DTSID="{5584CFC1-3787-48D8-8F8D-E7D96C98991C}"
       DTS:ObjectName="SHPFY.Inventory_Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=SHPFY;Initial Catalog=Inventory_Manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
-      DTS:CreationName="SMTP"
-      DTS:DTSID="{80CB23EA-E269-44EE-81C3-5FA999B9E963}"
-      DTS:ObjectName="SMTP Connection Manager">
-      <DTS:ObjectData>
-        <SmtpConnectionManager
-          ConnectionString="SmtpServer=SHPFY;UseWindowsAuthentication=True;EnableSsl=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -603,7 +593,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{F252815C-C482-49AE-B366-60E76458B5CF}"
+              SQLTask:Connection="{5584CFC1-3787-48D8-8F8D-E7D96C98991C}"
               SQLTask:SqlStatementSource="Delete  [dbo].[Product_Inventory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -619,7 +609,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{F252815C-C482-49AE-B366-60E76458B5CF}"
+              SQLTask:Connection="{5584CFC1-3787-48D8-8F8D-E7D96C98991C}"
               SQLTask:SqlStatementSource="Delete [dbo].[Supple_Products]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1608,7 +1598,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
