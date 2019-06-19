@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Multiple_Files_Upload"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{F0637E04-3341-44CD-BB9D-E8C00F81B0DF}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{8973555C-D133-4B35-810A-EC246754F8AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -898,7 +898,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Archive_Full_Path">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\Archive\_Shopify_20190618_234042.csv</DTS:VariableValue>
+        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\Archive\_Shopify_20190619_073517.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1042,7 +1042,7 @@
               SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
               SendMailTask:From="alerts@bulkoozle.com"
               SendMailTask:To="haas@bulkoozle.com"
-              SendMailTask:CC="reem@bulkoozle.com"
+              SendMailTask:CC="reem.mukhtar@bulkoozle.com"
               SendMailTask:Subject="Orderhive Loaded Successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1100,7 +1100,7 @@
               SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
               SendMailTask:From="alerts@bulkoozle.com"
               SendMailTask:To="haas@bulkoozle.com"
-              SendMailTask:CC="reem@bulkoozle.com"
+              SendMailTask:CC="reem.mukhtar@bulkoozle.com"
               SendMailTask:Subject="Shopify File Loaded Successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1119,7 +1119,7 @@
               SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
               SendMailTask:From="alerts@bulkoozle.com"
               SendMailTask:To="haas@bulkoozle.com"
-              SendMailTask:CC="reem@bulkoozle.com"
+              SendMailTask:CC="reem.mukhtar@bulkoozle.com"
               SendMailTask:Subject="Supple File loaded successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
