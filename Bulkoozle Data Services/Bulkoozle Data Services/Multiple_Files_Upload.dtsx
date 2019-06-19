@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Multiple_Files_Upload"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{8C324AE3-A8C3-45A5-92FF-22EBE1861E50}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{7CE46E76-3A2A-4D63-A14B-F02A256F9987}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -328,6 +328,442 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Shopify_Flat_File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B9ABC7C8-7B51-4E2E-A6D6-F70E6F26A762}"
+      DTS:ObjectName="Shopify_Flat_File">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Folder_Path]+"\\"+ @[User::File_Name]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Program Files\Configuration\Data_Sources\FTP\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Handle"
+              DTS:DTSID="{8571EA03-D207-4425-A53A-B87049D04CCC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{B84ABF81-0404-41AE-B0DF-CE0BFF1D8B27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Body (HTML)"
+              DTS:DTSID="{0064A398-5BE0-4ECF-81E9-E0A44B15F430}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vendor"
+              DTS:DTSID="{C8977956-CAE6-46D0-932A-EED076F16A42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{7C86CFC6-8458-4A92-ABA7-6F82C8AAE323}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{B08DBF77-77B3-4833-9564-3209F0633DC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Published"
+              DTS:DTSID="{1E2DEBE7-6106-4F35-AF06-0F06E66D72F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option1 Name"
+              DTS:DTSID="{E060E671-24B8-4BE4-9C36-7739B45826A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option1 Value"
+              DTS:DTSID="{B1601AFC-3BA9-40B8-B3CB-B9FEEFBF95AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option2 Name"
+              DTS:DTSID="{D0F1F336-8BDF-4229-A78C-67BAF70961BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option2 Value"
+              DTS:DTSID="{A73C4FB8-57B9-4CCF-934A-875BE74ECB2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option3 Name"
+              DTS:DTSID="{6618D2A7-92ED-40C4-B916-6E0F2D69B5C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Option3 Value"
+              DTS:DTSID="{529AA3AB-B8F9-4279-B0A1-9BEB27D1C3E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant SKU"
+              DTS:DTSID="{A6D8DAC0-2F05-44EC-A250-98C06EA0A868}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Grams"
+              DTS:DTSID="{715A7F2B-1078-4BD5-A67D-20723C579172}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Inventory Tracker"
+              DTS:DTSID="{2204CAD7-375A-4A45-8A42-45E8950062C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Inventory Policy"
+              DTS:DTSID="{50EF4F85-D183-49FD-BB47-545B0AD81058}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Fulfillment Service"
+              DTS:DTSID="{B83D6610-04CE-4583-86E8-4146E42301A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Price"
+              DTS:DTSID="{09190323-0E12-4DF6-AD5E-C0AEFDA65C7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Compare At Price"
+              DTS:DTSID="{C484EB43-2285-4E2F-87F9-6F5508D79B8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Requires Shipping"
+              DTS:DTSID="{597A982B-61EC-4CFC-90A1-1BEB46BD7187}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Taxable"
+              DTS:DTSID="{58724614-9AD5-4BE6-A7EE-A815F39AC379}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Barcode"
+              DTS:DTSID="{12502D07-225A-4A27-9AE5-8C5AD5380015}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Image Src"
+              DTS:DTSID="{D2302294-2FBF-4787-B581-1E4E4FF146C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Image Position"
+              DTS:DTSID="{17E3E9AE-BA4E-4C77-B2A2-CE41C263636E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Image Alt Text"
+              DTS:DTSID="{F838303F-C5B3-4817-94BD-7DB9BCCB1BEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gift Card"
+              DTS:DTSID="{74A77953-836D-49D7-BD6A-75977EA5B5AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEO Title"
+              DTS:DTSID="{B9649902-A158-45AC-8B56-C6547BCEFB11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEO Description"
+              DTS:DTSID="{698BC9FB-055C-4BCD-A557-E9309168AA3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Google Product Category"
+              DTS:DTSID="{A794ADE2-813D-4C87-92A0-A86ECFCD97B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Gender"
+              DTS:DTSID="{85850BA2-9657-4EAC-AA09-71D1B8BDE1DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Age Group"
+              DTS:DTSID="{C8FA1141-3B04-4C02-93F0-9703AF4698B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   MPN"
+              DTS:DTSID="{B74DB2CE-F913-46BD-B4F6-5568F8EB2723}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   AdWords Grouping"
+              DTS:DTSID="{F5053A82-8C3F-46A8-80AE-561595C5487D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   AdWords Labels"
+              DTS:DTSID="{7162C0DA-E101-4D34-BB11-2EC2D8429495}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Condition"
+              DTS:DTSID="{F34A0868-ADF6-47C2-AF4B-C5FAD9EE0CBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Product"
+              DTS:DTSID="{F7A9CDDB-287B-4DEC-B487-E889D661FEBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Label 0"
+              DTS:DTSID="{7066BE83-A95B-4355-9D79-5B763306119A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Label 1"
+              DTS:DTSID="{BEA343BC-86F8-433D-8363-F53CE5A31CB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Label 2"
+              DTS:DTSID="{3836BDDD-413A-4C16-9A46-1858D837181B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Label 3"
+              DTS:DTSID="{7AD395DE-B3E3-445A-8927-A2762C7D866F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Google Shopping   Custom Label 4"
+              DTS:DTSID="{1C527B93-C53C-4801-ACA3-E6020FDC859C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Image"
+              DTS:DTSID="{5B376ABA-B56A-482C-96CC-77A5139EF8AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Weight Unit"
+              DTS:DTSID="{EF905AEB-73FB-4C08-9575-0B0B6A76187E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Variant Tax Code"
+              DTS:DTSID="{DA4078D3-82B7-4412-96E8-7C00343CF29F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cost per item"
+              DTS:DTSID="{C89F77CD-597D-4AC4-8E19-3E37A53456B4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SHPFY mail server]"
       DTS:CreationName="SMTP"
       DTS:DTSID="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
@@ -513,6 +949,45 @@
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Archive Order Hive"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::Folder_Full_Path"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Archive_File_Path"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Archive Shopify Files"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{F82E62A2-DE68-40B2-A320-16E950F1F19F}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Shopify Files"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::Folder_Full_Path"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Archive_File_Path"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Archive Supple Files"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{6EECE7FE-C443-4CC2-8B89-0D563BC96EC1}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Supple Files"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -526,23 +1001,37 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Archive Supple Table"
-          DTS:CreationName="Microsoft.FileSystemTask"
-          DTS:Description="File System Task"
-          DTS:DTSID="{6EECE7FE-C443-4CC2-8B89-0D563BC96EC1}"
-          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:refId="Package\Foreach Loop Container\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1BB12D10-0A27-4DBD-A990-65348CFC0206}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Archive Supple Table"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5584CFC1-3787-48D8-8F8D-E7D96C98991C}"
+              SQLTask:SqlStatementSource="Delete [dbo].[Shopify_inventory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Order Hive Uploaded Successfully"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{24F750B0-0F81-4D3D-A819-AE893E2ABD99}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Order Hive Uploaded Successfully"
           DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <FileSystemData
-              TaskOperationType="MoveFile"
-              TaskOverwriteDestFile="True"
-              TaskSourcePath="User::Folder_Full_Path"
-              TaskIsSourceVariable="True"
-              TaskDestinationPath="User::Archive_File_Path"
-              TaskIsDestinationVariable="True" />
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
+              SendMailTask:From="alerts@bulkoozle.com"
+              SendMailTask:To="haas@bulkoozle.com"
+              SendMailTask:Subject="Orderhive Loaded Successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -564,13 +1053,31 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Send Mail Task"
+          DTS:refId="Package\Foreach Loop Container\Shopify File uploaded Successfully"
           DTS:CreationName="Microsoft.SendMailTask"
           DTS:Description="Send Mail Task"
-          DTS:DTSID="{24F750B0-0F81-4D3D-A819-AE893E2ABD99}"
+          DTS:DTSID="{fed743fd-9414-40ef-9916-1fe2fedd9036}"
           DTS:ExecutableType="Microsoft.SendMailTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Send Mail Task"
+          DTS:ObjectName="Shopify File uploaded Successfully"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
+              SendMailTask:From="alerts@bulkoozle.com"
+              SendMailTask:To="haas@bulkoozle.com"
+              SendMailTask:Subject="Shopify File Loaded Successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Suple File uploaded Successfully"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{782e9026-b886-4c11-a0be-1cd598191d2d}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Suple File uploaded Successfully"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -578,7 +1085,7 @@
               SendMailTask:SMTPServer="{31E1DA79-9AC3-453A-BA86-2F08D2018595}"
               SendMailTask:From="alerts@bulkoozle.com"
               SendMailTask:To="haas@bulkoozle.com"
-              SendMailTask:Subject="FIles loaded successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:Subject="Supple File loaded successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -589,7 +1096,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Order Hive Table"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -605,7 +1112,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Suple Table"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2109,6 +2616,1811 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Upload Shopify File"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{AC012E72-15D1-464B-8445-4BA4298A9432}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Upload Shopify File"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Load Shopify Table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Shopify_inventory]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[SHPFY.Inventory_Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Handle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Handle"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Handle]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Handle]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Title]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Title"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Title]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Vendor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Vendor"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Vendor]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Vendor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Tags]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Tags"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Tags]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].Columns[Published]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="450"
+                          cachedName="Published"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Published]"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Published]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Handle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Handle" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Vendor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Vendor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Tags" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Published]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Published" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Body (HTML)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Body (HTML)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option1 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option1 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option1 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option1 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option2 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option2 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option2 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option2 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option3 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option3 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Option3 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option3 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Grams]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Grams" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Inventory Tracker]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Inventory Tracker" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Inventory Policy]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Inventory Policy" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Fulfillment Service]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Fulfillment Service" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Compare At Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Compare At Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Requires Shipping]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Requires Shipping" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Taxable]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Taxable" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Barcode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Image Src]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Src" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Image Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Position" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Image Alt Text]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Alt Text" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Gift Card]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Gift Card" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[SEO Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SEO Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[SEO Description]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SEO Description" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Google Product Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Google Product Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Age Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Age Group" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   MPN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   MPN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   AdWords Grouping]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   AdWords Grouping" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   AdWords Labels]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   AdWords Labels" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Condition]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Condition" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Product]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Product" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Label 0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 0" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Label 1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 1" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Label 2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Label 3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 3" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Google Shopping   Custom Label 4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 4" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Image]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Image" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Weight Unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Variant Tax Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Tax Code" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input].ExternalColumns[Cost per item]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Cost per item" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Shopify_File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Shopify_Flat_File]"
+                      connectionManagerRefId="Package.ConnectionManagers[Shopify_Flat_File]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Handle]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Handle]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Handle]"
+                          name="Handle"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Title]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Title]"
+                          name="Title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Body (HTML)]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Body (HTML)]"
+                          length="8000"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Body (HTML)]"
+                          name="Body (HTML)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Vendor]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Vendor]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Vendor]"
+                          name="Vendor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Type]"
+                          name="Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Tags]"
+                          name="Tags"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Published]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Published]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Published]"
+                          name="Published"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option1 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option1 Name]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option1 Name]"
+                          name="Option1 Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option1 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option1 Value]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option1 Value]"
+                          name="Option1 Value"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option2 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option2 Name]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option2 Name]"
+                          name="Option2 Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option2 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option2 Value]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option2 Value]"
+                          name="Option2 Value"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option3 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option3 Name]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option3 Name]"
+                          name="Option3 Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option3 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option3 Value]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Option3 Value]"
+                          name="Option3 Value"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant SKU]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant SKU]"
+                          name="Variant SKU"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Grams]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Grams]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Grams]"
+                          name="Variant Grams"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Inventory Tracker]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Inventory Tracker]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Inventory Tracker]"
+                          name="Variant Inventory Tracker"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Inventory Policy]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Inventory Policy]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Inventory Policy]"
+                          name="Variant Inventory Policy"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Fulfillment Service]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Fulfillment Service]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Fulfillment Service]"
+                          name="Variant Fulfillment Service"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Price]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Price]"
+                          name="Variant Price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Compare At Price]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Compare At Price]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Compare At Price]"
+                          name="Variant Compare At Price"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Requires Shipping]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Requires Shipping]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Requires Shipping]"
+                          name="Variant Requires Shipping"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Taxable]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Taxable]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Taxable]"
+                          name="Variant Taxable"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Barcode]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Barcode]"
+                          name="Variant Barcode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Src]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Src]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Src]"
+                          name="Image Src"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Position]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Position]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Position]"
+                          name="Image Position"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Alt Text]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Alt Text]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Image Alt Text]"
+                          name="Image Alt Text"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Gift Card]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Gift Card]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Gift Card]"
+                          name="Gift Card"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[SEO Title]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[SEO Title]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[SEO Title]"
+                          name="SEO Title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[SEO Description]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[SEO Description]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[SEO Description]"
+                          name="SEO Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Google Product Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Google Product Category]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Google Product Category]"
+                          name="Google Shopping   Google Product Category"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Gender]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Gender]"
+                          name="Google Shopping   Gender"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Age Group]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Age Group]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Age Group]"
+                          name="Google Shopping   Age Group"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   MPN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   MPN]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   MPN]"
+                          name="Google Shopping   MPN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   AdWords Grouping]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   AdWords Grouping]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   AdWords Grouping]"
+                          name="Google Shopping   AdWords Grouping"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   AdWords Labels]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   AdWords Labels]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   AdWords Labels]"
+                          name="Google Shopping   AdWords Labels"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Condition]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Condition]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Condition]"
+                          name="Google Shopping   Condition"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Product]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Product]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Product]"
+                          name="Google Shopping   Custom Product"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 0]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 0]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 0]"
+                          name="Google Shopping   Custom Label 0"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 1]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 1]"
+                          name="Google Shopping   Custom Label 1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 2]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 2]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 2]"
+                          name="Google Shopping   Custom Label 2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 3]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 3]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 3]"
+                          name="Google Shopping   Custom Label 3"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 4]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 4]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Google Shopping   Custom Label 4]"
+                          name="Google Shopping   Custom Label 4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Image]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Image]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Image]"
+                          name="Variant Image"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Weight Unit]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Weight Unit]"
+                          name="Variant Weight Unit"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Tax Code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Tax Code]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Variant Tax Code]"
+                          name="Variant Tax Code"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Cost per item]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Cost per item]"
+                          length="450"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].Columns[Cost per item]"
+                          name="Cost per item"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Handle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Handle" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Body (HTML)]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Body (HTML)" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Vendor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Vendor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Tags" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Published]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Published" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option1 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option1 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option1 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option1 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option2 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option2 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option2 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option2 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option3 Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option3 Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Option3 Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Option3 Value" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant SKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant SKU" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Grams]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Grams" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Inventory Tracker]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Inventory Tracker" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Inventory Policy]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Inventory Policy" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Fulfillment Service]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Fulfillment Service" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Compare At Price]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Compare At Price" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Requires Shipping]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Requires Shipping" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Taxable]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Taxable" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Barcode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Barcode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Src]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Src" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Position" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Image Alt Text]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Image Alt Text" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Gift Card]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Gift Card" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[SEO Title]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SEO Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[SEO Description]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="SEO Description" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Google Product Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Google Product Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Age Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Age Group" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   MPN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   MPN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   AdWords Grouping]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   AdWords Grouping" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   AdWords Labels]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   AdWords Labels" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Condition]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Condition" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Product]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Product" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 0" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 1" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 3" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Google Shopping   Custom Label 4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Google Shopping   Custom Label 4" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Image]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Image" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Weight Unit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Weight Unit" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Variant Tax Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Variant Tax Code" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output].ExternalColumns[Cost per item]"
+                          codePage="1252"
+                          dataType="str"
+                          length="450"
+                          name="Cost per item" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Upload Shopify File.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Upload Shopify File\Shopify_File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Upload Suple file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
@@ -2618,6 +4930,22 @@
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Foreach Loop Container\Truncate Suple Table" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{7966F6BA-0538-465E-B711-AF8202E8AEBB}"
+          DTS:From="Package\Foreach Loop Container\Archive Supple Files"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Foreach Loop Container\Suple File uploaded Successfully" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{264BE3A4-4A37-43E4-9F4C-7B844E346667}"
+          DTS:From="Package\Foreach Loop Container\Archive Shopify Files"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 11"
+          DTS:To="Package\Foreach Loop Container\Shopify File uploaded Successfully" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{846525D4-677E-4699-8970-D8D9DF04B6BF}"
@@ -2648,7 +4976,17 @@
           DTS:From="Package\Foreach Loop Container\Upload Suple file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
-          DTS:To="Package\Foreach Loop Container\Archive Supple Table" />
+          DTS:To="Package\Foreach Loop Container\Archive Supple Files" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{63567D42-8B70-4899-9D08-02E0E5EA2402}"
+          DTS:EvalOp="3"
+          DTS:Expression="reverse (substring(Reverse(@[User::File_Name] ),5,len( @[User::File_Name] ))) == &quot;products_export&quot;"
+          DTS:From="Package\Foreach Loop Container\Script Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Foreach Loop Container\Execute SQL Task" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
@@ -2656,7 +4994,23 @@
           DTS:From="Package\Foreach Loop Container\Archive Order Hive"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
-          DTS:To="Package\Foreach Loop Container\Send Mail Task" />
+          DTS:To="Package\Foreach Loop Container\Order Hive Uploaded Successfully" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{D22845ED-4DAC-4BA5-A334-09D6904DBD6E}"
+          DTS:From="Package\Foreach Loop Container\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Foreach Loop Container\Upload Shopify File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{82D24DBD-840B-4AF3-8DB6-389533348EE0}"
+          DTS:From="Package\Foreach Loop Container\Upload Shopify File"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\Foreach Loop Container\Archive Shopify Files" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -2679,15 +5033,23 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Foreach Loop Container\Upload order hive file"
-          TopLeft="28,201" />
+          Size="167,42"
+          Id="Package\Foreach Loop Container\Archive Order Hive"
+          TopLeft="32,297" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Foreach Loop Container\Upload Suple file"
-          TopLeft="266,206" />
+          Size="173,42"
+          Id="Package\Foreach Loop Container\Archive Supple Files"
+          TopLeft="274,310" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Foreach Loop Container\Script Task"
+          TopLeft="176,15" />
+        <NodeLayout
+          Size="145,78"
+          Id="Package\Foreach Loop Container\Order Hive Uploaded Successfully"
+          TopLeft="36,394" />
         <NodeLayout
           Size="204,42"
           Id="Package\Foreach Loop Container\Truncate Order Hive Table"
@@ -2697,17 +5059,13 @@
           Id="Package\Foreach Loop Container\Truncate Suple Table"
           TopLeft="270,95" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\Foreach Loop Container\Archive Order Hive"
-          TopLeft="32,297" />
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Upload order hive file"
+          TopLeft="28,201" />
         <NodeLayout
-          Size="178,42"
-          Id="Package\Foreach Loop Container\Archive Supple Table"
-          TopLeft="274,310" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Foreach Loop Container\Script Task"
-          TopLeft="176,15" />
+          Size="158,42"
+          Id="Package\Foreach Loop Container\Upload Suple file"
+          TopLeft="266,206" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="221,57">
@@ -2876,9 +5234,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,62"
+              EndConnector="15.5,62"
               Start="0,0"
-              End="18,54.5">
+              End="15.5,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2889,13 +5247,35 @@
                     Point2="0,31"
                     Point3="4,31" />
                   <mssgle:LineSegment
-                    End="14,31" />
+                    End="11.5,31" />
                   <mssgle:CubicBezierSegment
-                    Point1="14,31"
-                    Point2="18,31"
-                    Point3="18,35" />
+                    Point1="11.5,31"
+                    Point2="15.5,31"
+                    Point3="15.5,35" />
                   <mssgle:LineSegment
-                    End="18,54.5" />
+                    End="15.5,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+          TopLeft="112,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2905,35 +5285,165 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="150,42"
-          Id="Package\Foreach Loop Container\Send Mail Task"
-          TopLeft="183,394" />
+          Size="163,42"
+          Id="Package\Foreach Loop Container\Execute SQL Task"
+          TopLeft="482,66" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
-          TopLeft="115.5,339">
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="307,36">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.833333333333,55"
+              EndConnector="175,51"
               Start="0,0"
-              End="118.833333333333,47.5">
+              End="167.5,51">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.6517150395778" />
+                    End="83.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.6517150395778"
-                    Point2="0,32.6517150395778"
-                    Point3="4,32.6517150395778" />
+                    Point1="83.5,0"
+                    Point2="87.5,0"
+                    Point3="87.5,4" />
                   <mssgle:LineSegment
-                    End="114.833333333333,32.6517150395778" />
+                    End="87.5,47" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.833333333333,32.6517150395778"
-                    Point2="118.833333333333,32.6517150395778"
-                    Point3="118.833333333333,36.6517150395778" />
+                    Point1="87.5,47"
+                    Point2="87.5,51"
+                    Point3="91.5,51" />
                   <mssgle:LineSegment
-                    End="118.833333333333,47.5" />
+                    End="167.5,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.5,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Foreach Loop Container\Upload Shopify File"
+          TopLeft="458,203" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+          TopLeft="563.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21,95"
+              Start="0,0"
+              End="-21,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-17,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17,47.5"
+                    Point2="-21,47.5"
+                    Point3="-21,51.5" />
+                  <mssgle:LineSegment
+                    End="-21,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Foreach Loop Container\Archive Shopify Files"
+          TopLeft="477,310" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          TopLeft="542.5,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.5,65"
+              Start="0,0"
+              End="22.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="18.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,32.5"
+                    Point2="22.5,32.5"
+                    Point3="22.5,36.5" />
+                  <mssgle:LineSegment
+                    End="22.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133,66"
+          Id="Package\Foreach Loop Container\Suple File uploaded Successfully"
+          TopLeft="288,389" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
+          TopLeft="357.5,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Foreach Loop Container\Shopify File uploaded Successfully"
+          TopLeft="477,405" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
+          TopLeft="566.5,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2945,8 +5455,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="520,491"
-          Size="520,534"
+          PanelSize="732,527"
+          Size="732,570"
           Id="Package\Foreach Loop Container"
           TopLeft="361,127" />
       </GraphLayout>
@@ -2956,15 +5466,15 @@
     design-time-name="Package\Foreach Loop Container\Upload order hive file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Foreach Loop Container\Upload order hive file\Order hive file"
-          TopLeft="361,166" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="155,42"
           Id="Package\Foreach Loop Container\Upload order hive file\Order hive table"
           TopLeft="342,324" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Foreach Loop Container\Upload order hive file\Order hive file"
+          TopLeft="361,166" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Upload order hive file.Paths[Flat File Source Output]"
           TopLeft="434,208">
@@ -2996,25 +5506,40 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Upload order hive file\Order hive table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Foreach Loop Container\Upload Suple file">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="128,42"
-          Id="Package\Foreach Loop Container\Upload Suple file\Supple file"
-          TopLeft="351,99" />
-        <NodeLayout
           Size="137,42"
           Id="Package\Foreach Loop Container\Upload Suple file\Supple table"
           TopLeft="332,257" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Foreach Loop Container\Upload Suple file\Supple file"
+          TopLeft="351,99" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Upload Suple file.Paths[Flat File Source Output]"
           TopLeft="415,141">
@@ -3053,7 +5578,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Upload order hive file\Order hive table">
+    design-time-name="Package\Foreach Loop Container\Upload Suple file\Supple table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3065,8 +5590,58 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Upload Shopify File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Foreach Loop Container\Upload Shopify File\Shopify_File"
+          TopLeft="653,120" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table"
+          TopLeft="697,247" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Upload Shopify File.Paths[Flat File Source Output]"
+          TopLeft="721,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.5,85"
+              Start="0,0"
+              End="60.5,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="4,42.5" />
+                  <mssgle:LineSegment
+                    End="56.5,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5,42.5"
+                    Point2="60.5,42.5"
+                    Point3="60.5,46.5" />
+                  <mssgle:LineSegment
+                    End="60.5,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Upload Suple file\Supple table">
+    design-time-name="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
