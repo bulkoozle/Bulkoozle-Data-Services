@@ -26,11 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SHPFY</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5pCy8hGwN0+LMZ2ubAgc5QAAAAACAAAAAAAQZgAAAAEAACAAAACI7VN+soFPl2QlDExVE3vY+Th0+m2ONzPRLLJpaI+9BAAAAAAOgAAAAAIAACAAAAC11DrgDCq2T0YgJQwybDsmhk5rm5tn0lWu+be0DWNHpZAAAABmtHetUzmFCSsGhcVvOgQ4XFJJoe/hGbTnyC3xg5rAw+bIWQhAfJK2XrTTvv7BcyFyBhSa7K7/s2vogY46pHirjigOFXCYc8t3wib2psBcKFrk5fnwrUaNzQcEsTo9EJyPczeQ6sOKCSVxDQIrWaokFkO7RACk9kCEzvRgfzoyPD6KD/75LiUV0K/e4PbMexpAAAAAkEdg5jDKEWXBbFb5FDT1KgYt3PtPZPIf0D77qMdLimxfLL7/1kT9SgKRWaXrjx7Q4sgMrtG31a9pSL/vnlXVgQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5pCy8hGwN0+LMZ2ubAgc5QAAAAACAAAAAAAQZgAAAAEAACAAAAApWNRI47nB6pJadvvvYRlm9WDOx4KTIGlrLvRE7fotMQAAAAAOgAAAAAIAACAAAABtfvSv9QzJAS7EiyLTlYi3is6udAoHnv/EkRjplvx3lJAAAACebJHYUw6nGRjVxPitmPCxBFhJ2AV0TPoK1994xvk+IqvMMtL7ekkOTNkN2ASTHq/v9IiFN6Xv0N1vedSghwxekkCbbH4Ye3J/aq3FxhGP0votRVO98DRUwZFfbJwseHNGyABhNa4upaN6BSlRy0Z6JCXBEuek3sOf+xym0BzvQlCVeZXukIpvEUiH/9bLhrdAAAAAXJXJi1iRgcv8xBxfaMzuF2Fbv1HorKge7a3hy5ud7GBqrQs9Dvp+6Fbv3JjB807enCMx5g4I63mXHiKolgTByQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Multiple_Files_Upload.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Execute_Multiple_Files_Upload_Task.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -42,10 +43,10 @@
                 <SSIS:Property SSIS:Name="Name">Multiple_Files_Upload</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C1B64124-8EB3-461E-BAD7-F6C73A365687}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F0637E04-3341-44CD-BB9D-E8C00F81B0DF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -108,7 +109,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">140</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">130</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -125,6 +126,21 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Multiple_Files_Upload.dtsx.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Administrator\source\repos\Bulkoozle-Data-Services\Bulkoozle Data Services\Bulkoozle Data Services\Multiple_Files_Upload.dtsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Order_Hive_Connection_Manager.AlwaysCheckForRowDelimiters">
@@ -426,6 +442,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -515,7 +533,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">140</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">130</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -791,6 +809,39 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Execute_Multiple_Files_Upload_Task.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{89BDB197-ADF9-4D98-9323-7FA049F0BBA1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Execute_Multiple_Files_Upload_Task</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FA34BC3E-6176-465C-84CF-5531C3FB277E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.Multiple_Files_Upload.dtsx.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Administrator\source\repos\Bulkoozle-Data-Services\Bulkoozle Data Services\Bulkoozle Data Services\Multiple_Files_Upload.dtsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
       </SSIS:Project>
@@ -807,7 +858,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2017</TargetServerVersion>
+        <TargetServerVersion>SQLServer2016</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
