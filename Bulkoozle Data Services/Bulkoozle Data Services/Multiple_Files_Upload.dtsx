@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Multiple_Files_Upload"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{7CE46E76-3A2A-4D63-A14B-F02A256F9987}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{4825157E-3543-4CD3-9C63-7A2E25AB5E16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -872,6 +872,26 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{E2201532-C695-4BB4-B26F-6225DC45C6A5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Archive_File_Path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DD9687E5-664D-4C74-9EA0-A528A17D33BD}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::Archive_File_Path] + &quot;\\&quot;  +Replace(@[User::File_Name],&quot;.csv&quot;,&quot;&quot;) +&quot;_Shopify_&quot;+ Replace(REPLACE(REPLACE(SUBSTRING((DT_STR, 50, 1252) getdate(),1,19),&quot;-&quot;,&quot;&quot;),&quot;:&quot;,&quot;&quot;),&quot; &quot;,&quot;_&quot;)+&quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Archive_Full_Path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\Configuration\Data_Sources\Archive\_Shopify_20190618_221444.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{70A9290A-76FF-4985-A3C8-62641620F7A3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -962,25 +982,6 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Archive Shopify Files"
-          DTS:CreationName="Microsoft.FileSystemTask"
-          DTS:Description="File System Task"
-          DTS:DTSID="{F82E62A2-DE68-40B2-A320-16E950F1F19F}"
-          DTS:ExecutableType="Microsoft.FileSystemTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Archive Shopify Files"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <FileSystemData
-              TaskOperationType="MoveFile"
-              TaskSourcePath="User::Folder_Full_Path"
-              TaskIsSourceVariable="True"
-              TaskDestinationPath="User::Archive_File_Path"
-              TaskIsDestinationVariable="True" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Archive Supple Files"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
@@ -1032,6 +1033,27 @@
               SendMailTask:From="alerts@bulkoozle.com"
               SendMailTask:To="haas@bulkoozle.com"
               SendMailTask:Subject="Orderhive Loaded Successfully" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Rename and Move Shopify File"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{EC41A72E-E4E1-43E8-9302-CE48E59C03D5}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Rename and Move Shopify File"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="RenameFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::Folder_Full_Path"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::Archive_Full_Path"
+              TaskIsDestinationVariable="True" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4940,8 +4962,8 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
           DTS:CreationName=""
-          DTS:DTSID="{264BE3A4-4A37-43E4-9F4C-7B844E346667}"
-          DTS:From="Package\Foreach Loop Container\Archive Shopify Files"
+          DTS:DTSID="{DB19CC1A-FD85-49F5-A134-A97F96D93CDD}"
+          DTS:From="Package\Foreach Loop Container\Rename and Move Shopify File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 11"
           DTS:To="Package\Foreach Loop Container\Shopify File uploaded Successfully" />
@@ -5006,11 +5028,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{82D24DBD-840B-4AF3-8DB6-389533348EE0}"
+          DTS:DTSID="{667BC9F0-AFE5-47EB-B88E-319946F1A7DD}"
           DTS:From="Package\Foreach Loop Container\Upload Shopify File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 9"
-          DTS:To="Package\Foreach Loop Container\Archive Shopify Files" />
+          DTS:To="Package\Foreach Loop Container\Rename and Move Shopify File" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -5043,13 +5065,25 @@
           Id="Package\Foreach Loop Container\Archive Supple Files"
           TopLeft="274,310" />
         <NodeLayout
-          Size="131,42"
-          Id="Package\Foreach Loop Container\Script Task"
-          TopLeft="176,15" />
+          Size="163,42"
+          Id="Package\Foreach Loop Container\Execute SQL Task"
+          TopLeft="482,66" />
         <NodeLayout
           Size="145,78"
           Id="Package\Foreach Loop Container\Order Hive Uploaded Successfully"
           TopLeft="36,394" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Foreach Loop Container\Script Task"
+          TopLeft="176,15" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Foreach Loop Container\Shopify File uploaded Successfully"
+          TopLeft="481,451" />
+        <NodeLayout
+          Size="133,66"
+          Id="Package\Foreach Loop Container\Suple File uploaded Successfully"
+          TopLeft="288,389" />
         <NodeLayout
           Size="204,42"
           Id="Package\Foreach Loop Container\Truncate Order Hive Table"
@@ -5062,6 +5096,10 @@
           Size="180,42"
           Id="Package\Foreach Loop Container\Upload order hive file"
           TopLeft="28,201" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Foreach Loop Container\Upload Shopify File"
+          TopLeft="458,203" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\Upload Suple file"
@@ -5284,10 +5322,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Foreach Loop Container\Execute SQL Task"
-          TopLeft="482,66" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
           TopLeft="307,36">
@@ -5324,10 +5358,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Foreach Loop Container\Upload Shopify File"
-          TopLeft="458,203" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
           TopLeft="563.5,108">
@@ -5362,48 +5392,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Foreach Loop Container\Archive Shopify Files"
-          TopLeft="477,310" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
-          TopLeft="542.5,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.5,65"
-              Start="0,0"
-              End="22.5,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="18.5,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,32.5"
-                    Point2="22.5,32.5"
-                    Point3="22.5,36.5" />
-                  <mssgle:LineSegment
-                    End="22.5,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,66"
-          Id="Package\Foreach Loop Container\Suple File uploaded Successfully"
-          TopLeft="288,389" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 10]"
           TopLeft="357.5,352">
@@ -5427,23 +5415,69 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="182,42"
-          Id="Package\Foreach Loop Container\Shopify File uploaded Successfully"
-          TopLeft="477,405" />
+          Size="224,42"
+          Id="Package\Foreach Loop Container\Rename and Move Shopify File"
+          TopLeft="507,322" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
-          TopLeft="566.5,352">
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          TopLeft="542.5,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="76.5,77"
               Start="0,0"
-              End="0,45.5">
+              End="76.5,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="72.5,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.5,38.5"
+                    Point2="76.5,38.5"
+                    Point3="76.5,42.5" />
+                  <mssgle:LineSegment
+                    End="76.5,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 11]"
+          TopLeft="619,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47,87"
+              Start="0,0"
+              End="-47,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="-4,43.5" />
+                  <mssgle:LineSegment
+                    End="-43,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43,43.5"
+                    Point2="-47,43.5"
+                    Point3="-47,47.5" />
+                  <mssgle:LineSegment
+                    End="-47,79.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5455,8 +5489,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="732,527"
-          Size="732,570"
+          PanelSize="732,579"
+          Size="732,622"
           Id="Package\Foreach Loop Container"
           TopLeft="361,127" />
       </GraphLayout>
@@ -5468,13 +5502,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Foreach Loop Container\Upload order hive file\Order hive table"
-          TopLeft="342,324" />
-        <NodeLayout
           Size="146,42"
           Id="Package\Foreach Loop Container\Upload order hive file\Order hive file"
           TopLeft="361,166" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Upload order hive file\Order hive table"
+          TopLeft="342,324" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Upload order hive file.Paths[Flat File Source Output]"
           TopLeft="434,208">
@@ -5514,95 +5548,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Upload order hive file\Order hive table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Foreach Loop Container\Upload Suple file">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="137,42"
-          Id="Package\Foreach Loop Container\Upload Suple file\Supple table"
-          TopLeft="332,257" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Foreach Loop Container\Upload Suple file\Supple file"
-          TopLeft="351,99" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Upload Suple file.Paths[Flat File Source Output]"
-          TopLeft="415,141">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14.5,116"
-              Start="0,0"
-              End="-14.5,108.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54"
-                    Point2="0,58"
-                    Point3="-4,58" />
-                  <mssgle:LineSegment
-                    End="-10.5,58" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5,58"
-                    Point2="-14.5,58"
-                    Point3="-14.5,62" />
-                  <mssgle:LineSegment
-                    End="-14.5,108.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Upload Suple file\Supple table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Foreach Loop Container\Upload Shopify File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="136,42"
-          Id="Package\Foreach Loop Container\Upload Shopify File\Shopify_File"
-          TopLeft="653,120" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169,42"
           Id="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table"
           TopLeft="697,247" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Foreach Loop Container\Upload Shopify File\Shopify_File"
+          TopLeft="653,120" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Upload Shopify File.Paths[Flat File Source Output]"
           TopLeft="721,162">
@@ -5634,24 +5592,65 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Upload Shopify File\Load Shopify Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Upload Suple file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Foreach Loop Container\Upload Suple file\Supple file"
+          TopLeft="351,99" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Foreach Loop Container\Upload Suple file\Supple table"
+          TopLeft="332,257" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Upload Suple file.Paths[Flat File Source Output]"
+          TopLeft="415,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,116"
+              Start="0,0"
+              End="-14.5,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54"
+                    Point2="0,58"
+                    Point3="-4,58" />
+                  <mssgle:LineSegment
+                    End="-10.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,58"
+                    Point2="-14.5,58"
+                    Point3="-14.5,62" />
+                  <mssgle:LineSegment
+                    End="-14.5,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
